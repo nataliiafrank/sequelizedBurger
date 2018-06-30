@@ -1,0 +1,64 @@
+<div class="header-text">
+    <h3 id="eat"><span class="dash">------</span> eat <span class="dash">------</span></h3>
+    <h1 id="header">Da<span id="dot">.</span>Burger</h1>
+
+    <form class="create-form">
+        <input type="text" id="burger-input" name="name">
+
+        <button class="btn" type="submit" id="submit">Submit</button>
+    </form>
+
+    <h5 id="instruction">Enter a burger you want to eat and click 'Submit'</h5>
+</div>
+
+<div class="row">
+
+    <div class="col", id="col-1">
+        <div id="clear-all">
+            <button class="btn" id="clear-btn">Clear All</button>
+            
+        </div>
+
+
+    </div>
+
+    <div class="col">
+        <div class="panels active">
+            <h4 id="active">
+                <span id="active-name">Ready to Eat</span>
+            </h4>
+            <ul>
+                {{#each burgers}} 
+                    {{#unless devoured}} 
+                        <li>
+                            {{id}}.
+                            {{burger_name}}
+                            <button class="devoure" data-id="{{id}}" data-state="{{devoured}}">
+                                DEVOURE!
+                            </button>
+                            
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="col">
+        <div class="panels unactive">
+            <h4>Devoured</h4>
+            <ul>
+                {{#each burgers}} 
+                    {{#if devoured}} 
+                        <li>
+                            {{id}}.
+                            {{burger_name}}
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</div>
